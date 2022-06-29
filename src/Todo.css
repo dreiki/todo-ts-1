@@ -1,0 +1,31 @@
+.TodoContainer {
+    display: flex;
+    flex-direction: row;
+    border: solid ;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.ItemDesc {
+    padding-left: 7px;
+    font-size: 16pt;
+}
+
+.Todo {
+    display: flex;
+    flex-direction:column;
+}
+
+.ResetButton {
+    display: flex;
+    margin: 10px;
+    justify-content: end;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
