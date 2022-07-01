@@ -3,18 +3,24 @@
     flex-direction: row;
     border: solid ;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 25px;
     margin: 10px;
 }
 
 .ItemDesc {
-    padding-left: 7px;
+    padding-left: 10px;
     font-size: 16pt;
+}
+
+.Checked {
+    text-decoration: line-through;
 }
 
 .Todo {
     display: flex;
     flex-direction:column;
+    padding: 5rem 10rem;
+    min
 }
 
 .ResetButton {
@@ -28,4 +34,3 @@ button {
     background-color: white;
     border-radius: 5px;
 }
-
