@@ -2,19 +2,19 @@ import { useEffect, useState } from 'react'
 import './Todo.css'
 
 function TodoItems(props) {
-    let checkedtoggle = (props.status) ? ["Checked","Selected"] : Array(2).fill("")
+    let checkedtoggle = (props.status) ? ["checked","selected"] : Array(2).fill("")
     return(
-        <div className={`TodoContainer ${checkedtoggle[1]}`} onClick={props.onClick}>
-            <p className={`ItemDesc ${checkedtoggle[0]}`}>{props.text}</p>
-        </div>
+            <div className={`todo-container ${checkedtoggle[1]}`} onClick={props.onClick}>
+                <p className={`item-description ${checkedtoggle[0]}`}>{props.text}</p>
+            </div>
     )
 }
 
 function TodoItemsInput(props) {
     return(
         
-        <div className={`InputContainer`}>
-            <input className="InvisibleInput" name="Input" value={props.value} onInput={props.onChange} onKeyDown={props.onKeyDown}></input>
+        <div className={`input-container`}>
+            <input className="input-field" name="Input" value={props.value} onInput={props.onChange} onKeyDown={props.onKeyDown}></input>
             <button className="Normal" onClick={props.onClick}>Add</button>
         </div>
     )
@@ -22,71 +22,71 @@ function TodoItemsInput(props) {
 
 function Todo() {
     // type DataFormat = {id:number,description:string,checked:boolean}
-    const originData = [
-        {id:1,description:"item1",checked:false},
-        {id:2,description:"item2",checked:false},
-        {id:3,description:"item3",checked:false},
-    ]
+    // const sampleData = [
+    //     {id:1,description:"item1",checked:false},
+    //     {id:2,description:"item2",checked:false},
+    //     {id:3,description:"item3",checked:false},
+    // ]
 
-    const [data,setData] = useState(originData)
+    const [data,setData] = useState([])
     const [input,setInput] = useState("")
 
     
-    function FlipCheck(...flipdata){
-        console.log(flipdata)
-        let temporaryFlipData=data
+    function flipCheck(...flipdata){
+        // console.log(flipdata)
+        let temporaryflipdata=data
         if (flipdata[0] === undefined) {
-            for (let i of temporaryFlipData) {
+            for (let i of temporaryflipdata) {
                 i.checked=false
             }
         } else {
-            temporaryFlipData[(flipdata[0]-1)].checked=flipdata[1]
+            temporaryflipdata[(flipdata[0]-1)].checked=flipdata[1]
         }
-        setData([...temporaryFlipData])
+        setData([...temporaryflipdata])
     }
 
-    function DeleteData(){
-        let temporaryFlipData=[]
+    function deleteData(){
+        let temporaryflipdata=[]
         let count=1
         for (let i of data) {
             if (i.checked === false) {
                 i.id = count
-                temporaryFlipData.push(i)
+                temporaryflipdata.push(i)
                 count++
             }
         }
-        console.log(temporaryFlipData)
-        setData([...temporaryFlipData])
+        // console.log(temporaryflipdata)
+        setData([...temporaryflipdata])
     }
 
-    function AddNewData(newdata){
+    function addNewData(newdata){
         if (newdata != "") {
-            let temporaryData=data
-            temporaryData.push({id:temporaryData.length+1,description:newdata,checked:false})
-            console.log(temporaryData)
-            setData([...temporaryData])
+            let temporarydata=data
+            temporarydata.push({id:temporarydata.length+1,description:newdata,checked:false})
+            // console.log(temporarydata)
+            setData([...temporarydata])
         }
     }
 
     let dataTodoComponent = []
     for (let i of data) {
-        dataTodoComponent.push(<TodoItems text={i.description} status={i.checked} onClick={()=>FlipCheck(i.id,!i.checked)}/>)
+        dataTodoComponent.push(<TodoItems key={i.id} text={i.description} status={i.checked} onClick={()=>flipCheck(i.id,!i.checked)}/>)
     }
 
     return(
-        <div className='Todo'>
-            <div className="Header">
+        <div className='todo-app-container'>
+            <div className="app-header">
                 <h1>TODO APP</h1>
             </div>
             {dataTodoComponent}
             <TodoItemsInput 
-            onClick={()=>AddNewData(input)} 
+            onClick={()=>addNewData(input)} 
             onChange={(e)=>setInput(e.target.value)} 
-            onKeyDown={(e)=>{if(e.key === 'Enter') {AddNewData(input)}}}
+            onKeyDown={(e)=>{if(e.key === 'Enter') {addNewData(input)}}}
             />
-            <div className='ButtonGroup'>
-                <button className="Deleter" onClick={()=>DeleteData()}>Delete</button>
-                <button className="Normal" onClick={()=>FlipCheck(undefined)}>Reset</button>
+            <div className='button-group'>
+                <button className="danger-button" onClick={()=>deleteData()}>Delete</button>
+                <button className="normal-button" onClick={()=>flipCheck(undefined)}>Reset</button>
             </div>
         </div>
     )

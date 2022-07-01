@@ -1,4 +1,4 @@
-.TodoContainer {
+.todo-container {
     display: flex;
     flex-direction: row;
     border: solid ;
@@ -7,47 +7,47 @@
     margin: 10px;
 }
 
-.InputContainer {
+.input-container {
     display: flex;
     flex-direction: row;
     padding: 10px;
     margin: 10px;
 }
 
-.ItemDesc {
+.item-description {
     padding-left: 10px;
     font-size: 16pt;
 }
 
-.Checked {
+.checked {
     text-decoration: line-through;
     color: white;
     text-decoration-color: white;
     
 }
 
-.Selected {
+.selected {
     background-color: black;
 }
 
-.Todo {
+.todo-app-container {
     display: flex;
     flex-direction:column;
     margin: 0 10rem;
     margin-top: 5rem;
 }
 
-.ButtonGroup {
+.button-group {
     display: flex;
     margin: 10px;
     justify-content: end;
 }
 
-.Normal {
+.normal-button {
     background-color: white;
 }
 
-.Deleter {
+.danger-button {
     background-color: maroon;
     color: white;
 }
@@ -64,7 +64,7 @@ button:active {
     color: white;
 }
 
-.InvisibleInput {
+.input-field {
     background-color: white;
     border-radius: 5px;
     border-style: dashed;
@@ -74,7 +74,7 @@ button:active {
     flex: auto;
 }
 
-.Header {
+.app-header {
     padding: 0 2.5rem;
     margin-bottom: 2rem;
     border-color: black;
