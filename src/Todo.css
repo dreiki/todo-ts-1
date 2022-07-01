@@ -3,7 +3,14 @@
     flex-direction: row;
     border: solid ;
     border-radius: 10px;
-    padding: 10px 25px;
+    padding: 0 25px;
+    margin: 10px;
+}
+
+.InputContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
     margin: 10px;
 }
 
@@ -65,4 +72,11 @@ button:active {
     font-size: 16pt;
     padding: 0.5rem;
     flex: auto;
+}
+
+.Header {
+    padding: 0 2.5rem;
+    margin-bottom: 2rem;
+    border-color: black;
+    border-bottom: solid;
 }
