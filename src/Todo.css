@@ -36,7 +36,7 @@
     justify-content: end;
 }
 
-.Reseter {
+.Normal {
     background-color: white;
 }
 
@@ -55,4 +55,14 @@ button {
 button:active {
     background-color: black;
     color: white;
+}
+
+.InvisibleInput {
+    background-color: white;
+    border-radius: 5px;
+    border-style: dashed;
+    border-color: black;
+    font-size: 16pt;
+    padding: 0.5rem;
+    flex: auto;
 }
