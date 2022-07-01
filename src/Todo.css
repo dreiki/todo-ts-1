@@ -14,23 +14,45 @@
 
 .Checked {
     text-decoration: line-through;
+    color: white;
+    text-decoration-color: white;
+    
+}
+
+.Selected {
+    background-color: black;
 }
 
 .Todo {
     display: flex;
     flex-direction:column;
-    padding: 5rem 10rem;
-    min
+    margin: 0 10rem;
+    margin-top: 5rem;
 }
 
-.ResetButton {
+.ButtonGroup {
     display: flex;
     margin: 10px;
     justify-content: end;
 }
 
-button {
-    padding: 5px 10px;
+.Reseter {
     background-color: white;
+}
+
+.Deleter {
+    background-color: maroon;
+    color: white;
+}
+
+button {
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
     border-radius: 5px;
+    font-size: 16pt;
+}
+
+button:active {
+    background-color: black;
+    color: white;
 }
