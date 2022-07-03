@@ -21,6 +21,7 @@ function TodoItemsInput(props) {
     )
 }
 
+//Main Todo App Container Component
 function Todo() {
     // type DataFormat = {id:number,description:string,checked:boolean} <-- trying to create type for consistent data type utilizing typescript, never actually tested
     // Sample data used while creating initial components & logic (no longer used)
@@ -98,7 +99,7 @@ function Todo() {
     return(
         <div className='todo-app-container'>
             <div className="app-header">
-                <h1>TODO APP</h1>
+                <h1>ToDo App</h1>
             </div>
             {dataTodoComponent}
             <TodoItemsInput 
