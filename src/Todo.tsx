@@ -16,7 +16,7 @@ function TodoItemsInput(props) {
     return(
         <div className={`input-container`}>
             <input className="input-field" name="Input" value={props.value} onInput={props.onChange} onKeyDown={props.onKeyDown}></input> {/* bind component input event to parrent component*/}
-            <button className="Normal" onClick={props.onClick}>Add</button> {/* bind component click event to parrent component*/}
+            <button className="normal-button" onClick={props.onClick}>Add</button> {/* bind component click event to parrent component*/}
         </div>
     )
 }
@@ -84,8 +84,8 @@ function Todo() {
     function addNewData(newdata){
         if (newdata != "") {
             let temporarydata=data
-            temporarydata.push({id:temporarydata.length+1,description:newdata,checked:false})
-            // console.log(temporarydata)
+            temporarydata.push({id:temporarydata.length+1,description:newdata,checked:false,date:Date.now()})
+            console.log(temporarydata)
             setData([...temporarydata])
         }
     }
