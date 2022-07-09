@@ -8,8 +8,8 @@ function App() {
     useEffect(() => {
       setTimeout(()=>{
         changeComponent(<Todo />)
-      },5000)
-    })
+      },2000)
+    },[])
 
   return(
     <div className='App'>

@@ -28,7 +28,6 @@
 /* InputNewTodoItem Component Style */
 .input-container {
     display: flex;
-    flex-direction: row;
     padding: 10px;
     margin: 10px;
 }
@@ -41,6 +40,7 @@
     font-size: 1.3rem;
     padding: 0.5rem;
     flex: auto;
+    width: 100%;
 }
 
 /* Whole Todo app container style */
@@ -49,6 +49,13 @@
     flex-direction:column;
     margin: 0 10rem;
     margin-top: 5rem;
+    min-width: 380px;
+}
+
+@media screen and ( max-width: 450px ) {
+    .todo-app-container {
+        margin: 0;
+    }
 }
 
 /* Button style */
