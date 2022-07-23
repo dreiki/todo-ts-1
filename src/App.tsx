@@ -7,15 +7,6 @@ function App() {
   const [component,changeComponent] = useState(<Loading />)
   console.log({...localStorage})
   
-<<<<<<< HEAD
-=======
-    useEffect(() => {
-      setTimeout(()=>{
-        changeComponent(<Todo />)
-      },2000)
-    },[])
-
->>>>>>> origin/master
   return(
     <div className='App'>
       {/* {component} */}
