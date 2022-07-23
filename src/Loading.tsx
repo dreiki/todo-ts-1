@@ -1,6 +1,6 @@
 import loading from "./loading.svg"
 import './loading.css'
-function Loading () {
+export default function Loading () {
     return(
         <div className="loading-container">
             <h1>Loading</h1>
@@ -8,4 +8,3 @@ function Loading () {
         </div>
     )
 }
-export default Loading
